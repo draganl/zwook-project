@@ -1,10 +1,10 @@
 <template>
-  <div
-    class="flex h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-  >
-    <OrganismsSidebar />
+  <div class="flex h-screen relative">
+    <OrganismsSidebar
+      class="w-[296px] absolute inset-y-0 left-0 dark:bg-dark-background-primary"
+    />
 
-    <div class="flex-1 flex flex-col overflow-hidden">
+    <div class="flex-1 flex flex-col overflow-hidden ml-[296px]">
       <OrganismsHeader />
 
       <main
