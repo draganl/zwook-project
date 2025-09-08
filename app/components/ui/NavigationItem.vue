@@ -9,7 +9,7 @@
           'text-text-primary font-semibold': isActive,
         }"
       >
-        <UiIcon :name="item.icon" class="mr-3" />
+        <UiIcon :name="item.icon" class="mr-3" height="16" />
         <span>{{ item.label }}</span>
       </NuxtLink>
       <NuxtLink
@@ -24,6 +24,8 @@
         :class="{
           'rotate-180': visibleChildren,
         }"
+        height="16"
+        width="16"
         @click.prevent="toggleSubmenu"
         v-if="item.subItems && item.subItems.length"
       />

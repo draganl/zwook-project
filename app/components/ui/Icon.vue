@@ -2,23 +2,25 @@
   <span class="inline-block" v-html="svgContent" :class="color" />
 </template>
 
-<script setup>
-import { ref, watch, onMounted } from "vue";
+<script setup lang="ts">
+import { ref, watch, onMounted, withDefaults } from "vue";
 
-const props = defineProps({
-  name: {
-    type: String,
-    required: true,
-  },
-  color: {
-    type: String,
-    default: "text-current",
-  },
+interface Props {
+  name: string;
+  color?: string;
+  width?: string;
+  height?: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  color: "text-current",
+  width: "24",
+  height: "24",
 });
 
 const svgContent = ref("");
 
-const processSvg = (svg) => {
+const processSvg = (svg: string) => {
   if (!svg) return "";
 
   let processedSvg = svg.replace(
@@ -29,6 +31,23 @@ const processSvg = (svg) => {
     /stroke="((?!none)[^"]*)"/g,
     'stroke="currentColor"',
   );
+  processedSvg = processedSvg.replace(
+    /width="[^"]*"/,
+    `width="${props.width}"`,
+  );
+  processedSvg = processedSvg.replace(
+    /height="[^"]*"/,
+    `height="${props.height}"`,
+  );
+  if (!/width="[^"]*"/.test(processedSvg)) {
+    processedSvg = processedSvg.replace(/<svg/, `<svg width="${props.width}"`);
+  }
+  if (!/height="[^"]*"/.test(processedSvg)) {
+    processedSvg = processedSvg.replace(
+      /<svg/,
+      `<svg height="${props.height}"`,
+    );
+  }
 
   return processedSvg;
 };
