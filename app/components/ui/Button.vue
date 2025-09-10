@@ -53,6 +53,7 @@ const variantClass = computed(() => {
     filled: {
       brand:
         "bg-surface-brand text-text-invert hover:bg-surface-brandHover dark:bg-dark-surface-brand dark:hover:bg-dark-surface-brandHover dark:text-dark-text-invert",
+      dark: "bg-surface-invert text-text-invert dark:bg-dark-surface-invert dark:text-dark-text-invert",
       neutral:
         "bg-surface-secondary text-text-primary hover:bg-surface-primaryActive dark:bg-dark-surface-secondary dark:hover:bg-dark-surface-primaryActive dark:text-dark-text-primary",
       warning:
