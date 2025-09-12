@@ -1,14 +1,16 @@
 <template>
   <section class="my-8 mx-9">
     <div class="mb-5 flex align items justify-between">
-      <h6 class="font-semibold text-l">Featured</h6>
+      <h6 class="font-semibold text-l">Categories</h6>
       <div>
         <UiButton variant="outline" color="neutral" size="md" to="/featured"
           >View All</UiButton
         >
       </div>
     </div>
-    <div class="gap-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+    <div
+      class="gap-5 grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8"
+    >
       <MoleculesAlbumCard
         v-for="(card, index) in cards"
         :key="index"

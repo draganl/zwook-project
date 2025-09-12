@@ -1,0 +1,60 @@
+<template>
+  <div>
+    <div class="flex justify-center items-center gap-9 text-text-xs">
+      <UiIcon
+        id="shuffle"
+        name="interface-arrows-shuffle-multimedia-shuffle-multi-button-controls-media"
+        class="cursor-pointer"
+        width="20"
+        height="20"
+      />
+      <UiIcon
+        id="prev"
+        name="entertainment-control-button-previous-button-television-buttons-movies-skip-previous-video-controls"
+        class="cursor-pointer"
+        width="20"
+        height="20"
+      />
+      <UiIcon
+        id="play"
+        name="entertainment-control-button-play-circle-controls-media-multi-play-multimedia-button-circle"
+        class="cursor-pointer"
+        width="32"
+        height="32"
+      />
+      <UiIcon
+        id="next"
+        name="entertainment-control-button-next-button-television-buttons-movies-skip-next-video-controls"
+        class="cursor-pointer"
+        width="20"
+        height="20"
+      />
+      <UiIcon
+        id="repeat"
+        name="interface-arrows-loop-arrow-diagram-loop-infinity-repeat"
+        class="cursor-pointer"
+        width="20"
+        height="20"
+      />
+    </div>
+    <div class="flex justify-between items-center gap-3">
+      <div
+        id="current-time"
+        class="text-text-xss text-text-primaryPlaceholder dark:text-text-primaryPlaceholder"
+      >
+        0:34
+      </div>
+      <uiProgressBar
+        size="sm"
+        color="neutral"
+        class="mt-6 mb-5 lg:min-w-[350px]"
+      />
+      <div
+        id="total-time"
+        class="text-text-xss text-text-primaryPlaceholder dark:text-text-primaryPlaceholder"
+      >
+        3:57
+      </div>
+    </div>
+  </div>
+</template>

@@ -24,7 +24,9 @@
         >
       </div>
     </div>
-    <div class="gap-5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+    <div
+      class="gap-5 grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8"
+    >
       <MoleculesAlbumCard
         v-for="(card, index) in cards"
         :key="index"

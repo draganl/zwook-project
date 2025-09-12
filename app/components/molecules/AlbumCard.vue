@@ -1,8 +1,8 @@
 <template>
   <article
-    class="relative h-[198px] rounded p-3 overflow-hidden bg-surface-primary dark:bg-surface-primary"
+    class="relative rounded p-3 overflow-hidden bg-surface-primary dark:bg-surface-primary"
   >
-    <figure class="rounded overflow-hidden mb-2 h-[150px] w-[150px]">
+    <figure class="rounded overflow-hidden mb-2 aspect-square">
       <img
         :src="card.image"
         :alt="card.title"
