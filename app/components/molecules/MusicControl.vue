@@ -37,21 +37,17 @@
         height="20"
       />
     </div>
-    <div class="flex justify-between items-center gap-3">
+    <div class="flex justify-between items-center mt-5 gap-3">
       <div
         id="current-time"
-        class="text-text-xss text-text-primaryPlaceholder dark:text-text-primaryPlaceholder"
+        class="text-text-xxs text-text-primaryPlaceholder dark:text-text-primaryPlaceholder"
       >
         0:34
       </div>
-      <uiProgressBar
-        size="sm"
-        color="neutral"
-        class="mt-6 mb-5 lg:min-w-[350px]"
-      />
+      <uiProgressBar size="sm" color="neutral" class="lg:min-w-[350px]" />
       <div
         id="total-time"
-        class="text-text-xss text-text-primaryPlaceholder dark:text-text-primaryPlaceholder"
+        class="text-text-xxs text-text-primaryPlaceholder dark:text-text-primaryPlaceholder"
       >
         3:57
       </div>

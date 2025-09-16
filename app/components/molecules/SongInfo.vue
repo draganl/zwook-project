@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex items-center">
     <figure
       class="grow-0 mr-2 w-12 h-12 border border-border-primary dark:border-border-primary rounded overflow-hidden"
     >
