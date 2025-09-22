@@ -14,7 +14,7 @@
       <p
         class="text-text-xxs font-medium text-text-primaryPlaceholder dark:text-text-primaryPlaceholder"
       >
-        Artist Name/p>
+        Artist Name
       </p>
     </div>
   </div>

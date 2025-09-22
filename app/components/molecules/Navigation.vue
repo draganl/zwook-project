@@ -93,7 +93,7 @@ const navigation = ref([
     to: "/podcasts",
     button: {
       label: "Add New",
-      to: "/podcasts/add-new",
+      to: "/podcast/new",
     },
   },
 ]);

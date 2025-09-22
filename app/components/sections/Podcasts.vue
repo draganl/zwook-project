@@ -1,7 +1,7 @@
 <template>
   <section class="pt-3 pb-8">
     <div class="px-9 mb-5 flex align items justify-between">
-      <h6 class="font-semibold text-l">Podcasts</h6>
+      <h1 class="font-semibold text-l">Podcasts</h1>
       <UiButton variant="outline" color="neutral" size="md" to="/podcasts"
         >View all</UiButton
       >

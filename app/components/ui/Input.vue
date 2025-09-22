@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <label
         v-if="label"
-        class="text-text-xs text-text-secondary dark:text-dark-text-secondary"
+        class="text-text-sm text-text-primary dark:text-dark-text-primary mb-1"
       >
         {{ label }}
       </label>
@@ -21,11 +21,25 @@
         :name="icon"
         class="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary dark:text-dark-text-secondary"
       />
+      <textarea
+        v-if="textarea"
+        class="w-full bg-surface-primary h-[150px] text-text-sm text-text-primary rounded-lg outline-none dark:text-dark-text-primary dark:bg-dark-surface-primary border p-3"
+        :class="{
+          'border-error focus:border-error dark:border-dark-border-error dark:focus:border-dark-border-error':
+            validationText,
+          'border-border-primary dark:border-dark-border-primary focus:border-brand-blue dark:focus:border-dark-brand':
+            !validationText,
+          'pl-9': icon,
+          'px-4': !icon,
+        }"
+        :placeholder="placeholder"
+      ></textarea>
       <input
+        v-else
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
         :placeholder="placeholder"
-        class="w-full bg-surface-primary h-11 text-text-md text-text-primary rounded-lg outline-none dark:text-dark-text-primary dark:bg-dark-surface-primary border"
+        class="w-full bg-surface-primary h-11 text-text-sm text-text-primary rounded-lg outline-none dark:text-dark-text-primary dark:bg-dark-surface-primary border px-3"
         :class="{
           'border-error focus:border-error dark:border-dark-border-error dark:focus:border-dark-border-error':
             validationText,
@@ -69,6 +83,10 @@ defineProps({
   validationText: {
     type: String,
     default: "",
+  },
+  textarea: {
+    type: Boolean,
+    default: false,
   },
   badge: {
     type: String,
