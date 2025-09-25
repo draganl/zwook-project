@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted, withDefaults } from "vue";
+import { ref, watch, withDefaults } from "vue";
 
 interface Props {
   name: string;
@@ -23,31 +23,16 @@ const svgContent = ref("");
 const processSvg = (svg: string) => {
   if (!svg) return "";
 
-  let processedSvg = svg.replace(
-    /fill="((?!none)[^"]*)"/g,
-    'fill="currentColor"',
-  );
+  let processedSvg = svg
+    .replace(/fill="((?!none)[^"]*)"/g, 'fill="currentColor"')
+    .replace(/stroke="((?!none)[^"]*)"/g, 'stroke="currentColor"')
+    .replace(/width="[^"]*"/g, "")
+    .replace(/height="[^"]*"/g, "");
+
   processedSvg = processedSvg.replace(
-    /stroke="((?!none)[^"]*)"/g,
-    'stroke="currentColor"',
+    /<svg/,
+    `<svg width="${props.width}" height="${props.height}"`,
   );
-  processedSvg = processedSvg.replace(
-    /width="[^"]*"/,
-    `width="${props.width}"`,
-  );
-  processedSvg = processedSvg.replace(
-    /height="[^"]*"/,
-    `height="${props.height}"`,
-  );
-  if (!/width="[^"]*"/.test(processedSvg)) {
-    processedSvg = processedSvg.replace(/<svg/, `<svg width="${props.width}"`);
-  }
-  if (!/height="[^"]*"/.test(processedSvg)) {
-    processedSvg = processedSvg.replace(
-      /<svg/,
-      `<svg height="${props.height}"`,
-    );
-  }
 
   return processedSvg;
 };
@@ -63,7 +48,7 @@ const fetchSvg = async () => {
   }
 };
 
-onMounted(fetchSvg);
-
-watch(() => props.name, fetchSvg);
+watch(() => [props.name, props.width, props.height], fetchSvg, {
+  immediate: true,
+});
 </script>

@@ -19,6 +19,8 @@
       <UiIcon
         v-if="icon"
         :name="icon"
+        width="16"
+        height="16"
         class="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary dark:text-dark-text-secondary"
       />
       <textarea
@@ -37,6 +39,7 @@
       <input
         v-else
         :value="modelValue"
+        :type="type"
         @input="$emit('update:modelValue', $event.target.value)"
         :placeholder="placeholder"
         class="w-full bg-surface-primary h-11 text-text-sm text-text-primary rounded-lg outline-none dark:text-dark-text-primary dark:bg-dark-surface-primary border px-3"
@@ -58,6 +61,8 @@
       <UiIcon
         name="interface-alert-warning-circle-warning-alert-frame-exclamation-caution-circle"
         class="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary dark:text-dark-text-secondary"
+        height="16"
+        width="16"
       />
       {{ validationText }}
     </span>
@@ -71,6 +76,10 @@ defineProps({
   label: {
     type: String,
     default: "",
+  },
+  type: {
+    type: String,
+    default: "text",
   },
   placeholder: {
     type: String,

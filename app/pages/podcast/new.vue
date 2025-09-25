@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 lg:p-9">
+  <form class="p-6 lg:p-9">
     <div class="md:flex justify-between w-full mb-5 lg:mb-9">
       <h1 class="font-medium text-display-sm">Create New Podcast</h1>
 
@@ -7,7 +7,7 @@
         <UiButton variant="outline" color="neutral" class="mr-3"
           >Cancel</UiButton
         >
-        <UiButton variant="filled" color="warning">Save</UiButton>
+        <UiButton type="submit" variant="filled" color="warning">Save</UiButton>
       </div>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -39,7 +39,7 @@
         <OrganismsFileUpload class="h-[447px]" />
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script setup lang="ts">
