@@ -18,17 +18,22 @@
         class="bg-surface-warning absolute top-0 right-0 mt-2 mr-8 rounded-full text-text-xxs rounded-full py-1 px-2 text-text-primary"
         >{{ item.button.label }}</NuxtLink
       >
-      <UiIcon
-        name="interface-arrows-button-down-arrow-down-keyboard"
-        class="absolute top-0 right-0 p-3 cursor-pointer"
-        :class="{
-          'rotate-180': visibleChildren,
-        }"
-        height="16"
-        width="16"
-        @click.prevent="toggleSubmenu"
+      <button
         v-if="item.subItems && item.subItems.length"
-      />
+        type="button"
+        @click.prevent="toggleSubmenu"
+        class="absolute top-0 right-0 p-3"
+        :aria-label="visibleChildren ? 'Collapse ' + item.label : 'Expand ' + item.label"
+      >
+        <UiIcon
+          name="interface-arrows-button-down-arrow-down-keyboard"
+          :class="{
+            'rotate-180': visibleChildren,
+          }"
+          height="16"
+          width="16"
+        />
+      </button>
     </div>
     <Transition name="slide">
       <nav v-if="item.subItems && item.subItems.length && visibleChildren">

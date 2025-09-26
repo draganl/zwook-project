@@ -10,12 +10,12 @@
     >
       <img
         src="/images/login-top.svg"
-        class="absolute top-0 left-0"
+        class="absolute top-0 left-0 z-10"
         alt="Login"
       />
       <img
         src="/images/login.png"
-        class="absolute bottom-0 right-0"
+        class="absolute bottom-0 right-0 z-0"
         alt="Login"
       />
     </div>

@@ -8,12 +8,7 @@
   </footer>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
+<script setup lang="ts">
 </script>
 
 <style lang="scss" scoped></style>

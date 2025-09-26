@@ -1,7 +1,12 @@
 <template>
-  <label class="flex items-center cursor-pointer">
+  <label
+    :for="id"
+    class="flex items-center cursor-pointer rounded-md p-1 focus-within:ring-2 focus-within:ring-brand-blue/30"
+  >
     <div class="relative">
       <input
+        :id="id"
+        :name="name"
         type="checkbox"
         :checked="modelValue"
         @change="$emit('update:modelValue', $event.target.checked)"
@@ -25,6 +30,8 @@
 
 <script setup lang="ts">
 interface Props {
+  id: string;
+  name: string;
   label?: string;
   modelValue?: boolean;
 }

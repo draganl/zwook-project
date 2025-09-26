@@ -3,6 +3,7 @@
     <div class="flex items-center justify-between">
       <label
         v-if="label"
+        :for="id"
         class="text-text-sm text-text-primary dark:text-dark-text-primary mb-1"
       >
         {{ label }}
@@ -21,15 +22,17 @@
         :name="icon"
         width="16"
         height="16"
-        class="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary dark:text-dark-text-secondary"
+        class="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary dark:text-dark-text-secondary pointer-events-none"
       />
       <textarea
         v-if="textarea"
-        class="w-full bg-surface-primary h-[150px] text-text-sm text-text-primary rounded-lg outline-none dark:text-dark-text-primary dark:bg-dark-surface-primary border p-3"
+        :id="id"
+        :name="name"
+        class="w-full bg-surface-primary h-[150px] text-text-sm text-text-primary rounded-lg outline-none dark:text-dark-text-primary dark:bg-dark-surface-primary border p-3 transition-all"
         :class="{
-          'border-error focus:border-error dark:border-dark-border-error dark:focus:border-dark-border-error':
+          'border-error focus:border-error dark:border-dark-border-error dark:focus:border-dark-border-error focus:ring-2 focus:ring-red-500/30':
             validationText,
-          'border-border-primary dark:border-dark-border-primary focus:border-brand-blue dark:focus:border-dark-brand':
+          'border-border-primary dark:border-dark-border-primary focus:border-brand-blue dark:focus:border-dark-brand focus:ring-2 focus:ring-brand-blue/30':
             !validationText,
           'pl-9': icon,
           'px-4': !icon,
@@ -38,15 +41,17 @@
       ></textarea>
       <input
         v-else
+        :id="id"
+        :name="name"
         :value="modelValue"
         :type="type"
         @input="$emit('update:modelValue', $event.target.value)"
         :placeholder="placeholder"
-        class="w-full bg-surface-primary h-11 text-text-sm text-text-primary rounded-lg outline-none dark:text-dark-text-primary dark:bg-dark-surface-primary border px-3"
+        class="w-full bg-surface-primary h-11 text-text-sm text-text-primary rounded-lg outline-none dark:text-dark-text-primary dark:bg-dark-surface-primary border px-3 transition-all"
         :class="{
-          'border-error focus:border-error dark:border-dark-border-error dark:focus:border-dark-border-error':
+          'border-error focus:border-error dark:border-dark-border-error dark:focus:border-dark-border-error focus:ring-2 focus:ring-red-500/30':
             validationText,
-          'border-border-primary dark:border-dark-border-primary focus:border-brand-blue dark:focus:border-dark-brand':
+          'border-border-primary dark:border-dark-border-primary focus:border-brand-blue dark:focus:border-dark-brand focus:ring-2 focus:ring-brand-blue/30':
             !validationText,
           'pl-9': icon,
           'px-4': !icon,
@@ -56,11 +61,11 @@
 
     <span
       v-if="validationText"
-      class="text-text-xs text-text-error dark:text-dark-text-error"
+      class="inline-flex items-center text-text-xs text-text-error dark:text-dark-text-error"
     >
       <UiIcon
         name="interface-alert-warning-circle-warning-alert-frame-exclamation-caution-circle"
-        class="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary dark:text-dark-text-secondary"
+        class="mr-1"
         height="16"
         width="16"
       />
@@ -73,6 +78,14 @@
 import { defineProps, defineEmits } from "vue";
 
 defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
   label: {
     type: String,
     default: "",

@@ -1,12 +1,14 @@
 <template>
   <div class="flex items-center">
-    <UiIcon
-      id="shuffle"
-      name="entertainment-volume-level-off-volume-speaker-control-music-audio"
-      class="mr-3 cursor-pointer"
-      width="20"
-      height="20"
-    />
+    <button type="button" aria-label="Mute">
+      <UiIcon
+        id="shuffle"
+        name="entertainment-volume-level-off-volume-speaker-control-music-audio"
+        class="mr-3"
+        width="20"
+        height="20"
+      />
+    </button>
     <uiProgressBar
       size="sm"
       color="neutral"

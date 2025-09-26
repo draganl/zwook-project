@@ -39,7 +39,9 @@
       </p>
     </div>
     <div class="ml-4">
-      <UiIcon name="delete-1" class="cursor-pointer text-text-secondary dark:text-dark-text-secondary" />
+      <button type="button" :aria-label="'Remove ' + file.name">
+        <UiIcon name="delete-1" class="text-text-secondary dark:text-dark-text-secondary" />
+      </button>
     </div>
   </div>
 </template>

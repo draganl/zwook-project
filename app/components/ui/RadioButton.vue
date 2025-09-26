@@ -1,6 +1,10 @@
 <template>
-  <label class="flex items-center cursor-pointer">
+  <label
+    :for="id"
+    class="flex items-center cursor-pointer rounded-md p-1 focus-within:ring-2 focus-within:ring-brand-blue/30"
+  >
     <input
+      :id="id"
       type="radio"
       :name="name"
       :value="value"
@@ -26,6 +30,7 @@
 
 <script setup lang="ts">
 interface Props {
+  id: string;
   label?: string;
   modelValue?: string | number;
   value?: string | number;
