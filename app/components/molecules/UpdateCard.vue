@@ -26,7 +26,7 @@
     <div class="flex">
       <NuxtLink
         to="#"
-        class="block py-2 text-sm mr-3 text-text-primary rounded-md bg-none hover:bg-text-secondary dark:hover:bg-dark-text-secondary transition easy-out duration-300"
+        class="block py-2 text-sm mr-3 text-text-primary dark:text-dark-text-primary rounded-md bg-none hover:bg-text-secondary dark:hover:bg-dark-text-secondary transition easy-out duration-300"
         >Dismiss</NuxtLink
       >
       <NuxtLink to="#" class="block py-2 text-sm mr-3 text-surface-warning"

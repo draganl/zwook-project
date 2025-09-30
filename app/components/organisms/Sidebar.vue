@@ -7,7 +7,9 @@
       <img src="/images/logo-dark.svg" alt="Logo" class="dark:block hidden" />
     </NuxtLink>
     <MoleculesNavigation />
-    <MoleculesUpdateCard :class="[isSidebarOpen ? 'block' : 'hidden']" />
+    <MoleculesUpdateCard
+      :class="[isSidebarOpen ? 'block' : 'hidden lg:block']"
+    />
 
     <button
       @click="
@@ -28,4 +30,3 @@ defineEmits(["toggle-sidebar"]);
 
 const isSidebarOpen = ref(false);
 </script>
-

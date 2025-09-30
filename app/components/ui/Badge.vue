@@ -27,8 +27,7 @@ const badgeVariantClass = computed(() => {
     filled: {
       neutral:
         "bg-surface-secondary text-text-secondary dark:bg-dark-surface-secondary dark:text-dark-text-secondary",
-      brand:
-        "bg-surface-brand text-text-invert dark:bg-dark-surface-brand dark:text-dark-text-invert",
+      brand: "bg-surface-brand text-text-invert dark:bg-dark-surface-brand",
       warning:
         "bg-surface-warning text-text-warning dark:bg-dark-surface-warning dark:text-dark-text-warning",
       error:

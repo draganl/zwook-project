@@ -1,7 +1,11 @@
 <template>
   <section class="my-8 mx-9">
     <div class="mb-5 flex align items justify-between">
-      <h6 class="font-semibold text-l">Categories</h6>
+      <h6
+        class="text-text-l font-semibold text-text-primary dark:text-dark-text-primary"
+      >
+        Categories
+      </h6>
       <div>
         <UiButton variant="outline" color="neutral" size="md" to="/featured"
           >View All</UiButton

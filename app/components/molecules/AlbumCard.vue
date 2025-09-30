@@ -1,6 +1,6 @@
 <template>
   <article
-    class="relative rounded p-3 overflow-hidden bg-surface-primary dark:bg-surface-primary"
+    class="relative rounded p-3 overflow-hidden bg-surface-primary dark:bg-dark-surface-primary"
   >
     <figure class="rounded overflow-hidden mb-2 aspect-square">
       <img

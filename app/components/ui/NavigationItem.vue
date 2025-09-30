@@ -4,12 +4,19 @@
       <NuxtLink
         v-slot="{ isActive }"
         :to="item.to"
-        class="flex-1 flex items-center text-[#4B5565] px-3 py-2 rounded-md transition duration-300 ease-in-out hover:bg-surface-primaryActive dark:hover:bg-dark-primaryActive w-full block"
+        class="flex-1 flex items-center text-[#4B5565] dark:text-dark-text-secondary px-3 py-2 rounded-md transition duration-300 ease-in-out hover:bg-surface-primaryActive dark:hover:bg-dark-surface-primaryActive w-full block"
         :class="{
-          'text-text-primary font-semibold': isActive,
+          'text-text-primary dark:text-dark-text-primary font-semibold':
+            isActive,
         }"
       >
-        <UiIcon :name="item.icon" class="mr-3" height="16" />
+        <UiIcon
+          class="mr-3"
+          color="text-text-primary dark:text-dark-text-secondary"
+          :name="item.icon"
+          height="16"
+          width="16"
+        />
         <span>{{ item.label }}</span>
       </NuxtLink>
       <NuxtLink
@@ -23,13 +30,16 @@
         type="button"
         @click.prevent="toggleSubmenu"
         class="absolute top-0 right-0 p-3"
-        :aria-label="visibleChildren ? 'Collapse ' + item.label : 'Expand ' + item.label"
+        :aria-label="
+          visibleChildren ? 'Collapse ' + item.label : 'Expand ' + item.label
+        "
       >
         <UiIcon
           name="interface-arrows-button-down-arrow-down-keyboard"
           :class="{
             'rotate-180': visibleChildren,
           }"
+          class="text-text-primary dark:text-dark-text-secondary"
           height="16"
           width="16"
         />
@@ -69,7 +79,7 @@ const toggleSubmenu = () => {
 <style lang="css" scoped>
 .router-link-active,
 .router-link-exact-active {
-  @apply rounded-md px-3 py-2 bg-surface-primaryActive font-semibold text-text-primary;
+  @apply rounded-md px-3 py-2 bg-surface-primaryActive dark:bg-dark-surface-primaryActive font-semibold text-text-primary dark:text-dark-text-primary;
 }
 .subitem:before {
   content: "";
@@ -79,7 +89,6 @@ const toggleSubmenu = () => {
   @apply bg-[#2970FF];
 }
 
-/* Slide transition styles */
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.3s ease-in-out;
@@ -95,7 +104,7 @@ const toggleSubmenu = () => {
 
 .slide-enter-to,
 .slide-leave-from {
-  max-height: 500px; /* A value large enough to accommodate the content */
+  max-height: 500px;
   opacity: 1;
   transform: translateY(0);
 }

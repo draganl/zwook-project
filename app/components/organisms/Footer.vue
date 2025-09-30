@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="flex items-center justify-between py-3 px-9 bg-surface-primary text-text-primaryplaceholder border border-border-primary dark:bg-dark-suface-primary dark:text-text-primaryplaceholder dark:border-border-primary"
+    class="flex items-center justify-between py-3 px-9 bg-surface-primary text-text-primaryPlaceholder border-t border-border-primary dark:bg-dark-surface-primary dark:text-text-primaryPlaceholder dark:border-dark-border-primary"
   >
     <MoleculesSongInfo />
     <MoleculesMusicControl />
@@ -8,7 +8,7 @@
   </footer>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped></style>
+

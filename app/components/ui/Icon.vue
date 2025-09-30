@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, withDefaults } from 'vue';
-import { useIcon } from '~/composables/useIcon';
+import { computed, withDefaults } from "vue";
+import { useIcon } from "~/composables/useIcon";
 
 interface Props {
   name: string;
@@ -20,9 +20,9 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: 'text-current',
-  width: '24',
-  height: '24',
+  color: "text-current",
+  width: "24",
+  height: "24",
 });
 
 const iconComponent = computed(() => useIcon(props.name));

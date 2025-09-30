@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-screen relative bg-background-primary dark:bg-dark-background-primary overflow-hidden"
+    class="h-screen relative bg-background-primary dark:bg-dark-background-primary flex overflow-hidden"
   >
     <div
       v-if="isSidebarOpen"
@@ -34,4 +34,3 @@ import { ref } from "vue";
 
 const isSidebarOpen = ref(false);
 </script>
-

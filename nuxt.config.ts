@@ -10,6 +10,11 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxtjs/color-mode",
   ],
+  colorMode: {
+    preference: 'system', // default value
+    fallback: 'light', // fallback value if system preference isn't available
+    classSuffix: ''
+  },
   fonts: {
     google: {
       families: {

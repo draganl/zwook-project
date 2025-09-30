@@ -1,43 +1,45 @@
 <template>
-  <table class="w-full text-left table-auto">
-    <thead>
-      <tr>
-        <th
-          class="p-4 border-b border-border-primary dark:border-dark-border-primary font-semibold text-[#4B5565] dark:text-dark-text-secondary text-text-xs"
-        >
-          #
-        </th>
-        <th
-          class="p-4 border-b border-border-primary dark:border-dark-border-primary font-semibold text-[#4B5565] dark:text-dark-text-secondary text-text-xs"
-        >
-          Title
-        </th>
-        <th
-          class="p-4 font-semibold text-[#4B5565] dark:text-dark-text-secondary border-b border-border-primary dark:border-dark-border-primary text-text-xs"
-        >
-          Album
-        </th>
-        <th
-          class="p-4 font-semibold border-b border-border-primary dark:border-dark-border-primary text-[#4B5565] dark:text-dark-text-secondary text-text-xs"
-        >
-          Date Added
-        </th>
-        <th
-          class="p-4 font-semibold text-[#4B5565] dark:text-dark-text-secondary text-text-xs border-b border-border-primary dark:border-dark-border-primary"
-        >
-          Song Time
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <UiTableRow
-        v-for="(song, index) in songs"
-        :key="index"
-        :index="index"
-        :song="song"
-      />
-    </tbody>
-  </table>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left table-auto min-w-[640px]">
+      <thead>
+        <tr>
+          <th
+            class="p-4 border-b border-border-primary dark:border-dark-border-primary font-semibold text-[#4B5565] dark:text-dark-text-secondary text-text-xs"
+          >
+            #
+          </th>
+          <th
+            class="p-4 border-b border-border-primary dark:border-dark-border-primary font-semibold text-[#4B5565] dark:text-dark-text-secondary text-text-xs"
+          >
+            Title
+          </th>
+          <th
+            class="p-4 font-semibold text-[#4B5565] dark:text-dark-text-secondary border-b border-border-primary dark:border-dark-border-primary text-text-xs"
+          >
+            Album
+          </th>
+          <th
+            class="p-4 font-semibold border-b border-border-primary dark:border-dark-border-primary text-[#4B5565] dark:text-dark-text-secondary text-text-xs"
+          >
+            Date Added
+          </th>
+          <th
+            class="p-4 font-semibold text-[#4B5565] dark:text-dark-text-secondary text-text-xs border-b border-border-primary dark:border-dark-border-primary"
+          >
+            Song Time
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <UiTableRow
+          v-for="(song, index) in songs"
+          :key="index"
+          :index="index"
+          :song="song"
+        />
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script setup lang="ts">

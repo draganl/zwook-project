@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-2">
+  <div class="flex flex-col">
     <div class="flex items-center justify-between">
       <label
         v-if="label"
@@ -61,7 +61,7 @@
 
     <span
       v-if="validationText"
-      class="inline-flex items-center text-text-xs text-text-error dark:text-dark-text-error"
+      class="mt-2 inline-flex items-center text-text-xs text-text-error dark:text-dark-text-error"
     >
       <UiIcon
         name="interface-alert-warning-circle-warning-alert-frame-exclamation-caution-circle"
@@ -122,3 +122,4 @@ defineProps({
 
 defineEmits(["update:modelValue"]);
 </script>
+
